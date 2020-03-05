@@ -18,6 +18,26 @@
 
 
 
-        You are now logged in as a EMPLOYEE of our wonderful site.
+        <h2>You are now logged in as a EMPLOYEE of our wonderful site.<h2>
+
+        <form name="oversigt" action="FrontController" method="POST">
+            <input type="hidden" name="taget" value="oversigt">
+            <input type="submit" value="oversigts liste">
+        </form>
+
+        <form name="registerEmp" action="FrontController" method="POST">
+            <input type="hidden" name="taget" value="registerEmp">
+            Email:<br>
+            <input type="text" name="email" value="someone@nowhere.com">
+            <br>
+            Password:<br>
+            <input type="password" name="password1" value="sesam">
+            <br>
+            Retype Password:<br>
+            <input type="password" name="password2" value="sesam">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
     </body>
 </html>

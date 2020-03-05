@@ -55,5 +55,36 @@ public class UserMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
+    public static void deleteUser( int id ) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
 
+            String SQL = "delete from useradmin.users where id = '"+id+"'";
+            PreparedStatement ps = con.prepareStatement( SQL );
+
+            ps.executeUpdate();
+
+
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+
+
+    public static void updatePassword( int id, String password ) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+
+            String SQL = "update users set password ='"+password+"' where id = '"+id+"'  ";
+            PreparedStatement ps = con.prepareStatement( SQL );
+
+            ps.executeUpdate();
+
+
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 }
